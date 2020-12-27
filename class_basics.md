@@ -1,10 +1,10 @@
+<img src="./img/dags_pancake.jpg" alt="dogs" width="400" title="Zelda and Leeloo like pancakes!" />
+
 source: [Real Python](https://realpython.com/python3-object-oriented-programming/)
 
 Object Oriented Programming is an excellent way to take full advantage of the capabilities Python 3 has to offer.
 
 Let's begin by creating a basic class. A class about dogs.
-
-<img src="./img/dags_pancake.jpg" alt="dogs" width="400" title="Zelda and Leeloo like pancakes!" />
 
 These are my family's dogs. Zelda is the black [Yorkshire Terrier and Miniature Poodle mix](https://dogtime.com/dog-breeds/yorkipoo), and Leeloo is a [West Highland White Terrier](https://en.wikipedia.org/wiki/West_Highland_White_Terrier). They will be pivotal in describing Object Oriented Design... well, maybe.
 
