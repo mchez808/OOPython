@@ -4,9 +4,7 @@ Object Oriented Programming is an excellent way to take full advantage of the ca
 
 Let's begin by creating a basic class. A class about dogs.
 
-<!-- insert pic here -->
-<!-- ![dogs](./img/dags_pancake.jpg "Zelda and Leeloo like pancakes!") -->
-<img src="./img/dags_pancake.jpg" alt="dogs" width="400"/>
+<img src="./img/dags_pancake.jpg" alt="dogs" width="400" title="Zelda and Leeloo like pancakes!" />
 
 ##### Naming conventions
 
