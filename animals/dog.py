@@ -24,4 +24,4 @@ if __name__ == '__main__':
     zel.__str__()
     # note: this would only display if typed directly into the CLI.
 
-    print(zel.__str__(), lee.__str__())
+    print(zel, lee)
