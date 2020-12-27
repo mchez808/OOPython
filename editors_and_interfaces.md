@@ -26,4 +26,8 @@ A handy Python command for clearing the CLI when running Python there
 from os import system
 def cls():
     system('cls')
+
+>>> cls()
+
+# clears Bash CLI
 ```

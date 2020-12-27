@@ -5,6 +5,8 @@ Object Oriented Programming is an excellent way to take full advantage of the ca
 Let's begin by creating a basic class. A class about dogs.
 
 <!-- insert pic here -->
+![dogs pic](./img/dags_pancake.jpg "2 dogs")
+
 
 ##### Naming conventions
 
@@ -25,4 +27,4 @@ zel = Dog(name='Zelda', age=11)
 
 Class Attributes are common to all instances (objects). All dogs belong to the same species. Declare it outside the `.__init__()`, and it's a class attribute.
 
-It's helpful to [run Python interactively](https://github.com/mchez808/OOPython/blob/main/editors_and_interfaces.md)
+It's helpful for me to [run Python interactively](https://github.com/mchez808/OOPython/blob/main/editors_and_interfaces.md) on the fly.
