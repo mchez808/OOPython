@@ -33,6 +33,16 @@ It's helpful for me to [run Python interactively](https://github.com/mchez808/OO
 
 **Instance methods** can only be called from a class object. Just like `.__init__()`, the first parameter of an instance method should always be `self`. This is not a reserved keyword, but rather a Python convention that will improve readability.
 
-It is okay to have an instance method `describe()`; it is far better to write the special instance method `__str__()`. Here's why: if I type `print(zel)`, I'll display the memory address, like `<__main__.Dog object at 0x0000024A21FA42B0>`. By using the **dunder method** `__str__()`, Python will know that by typing `print(zel)`, I really want to view a string representation of the object. (Java developers, think of it as the `toString()` method.)
+#### Magic Methods
 
-To clarify, the *dunder method* `__str__()` will alter `print(zel)`, but it will not affect the output when typing `zel` into the CLI. The memory address will appear, unless `print()` is used.
+It is okay to have an instance method `describe()`; it is far better to write the special instance method `__str__()`. Here's why: if I type `print(zel)`, I'll display the memory address, like `<__main__.Dog object at 0x0000024A21FA42B0>`. By using the **magic method** `__str__()`, Python will know that by typing `print(zel)`, I really want to view a string representation of the object. (Java developers, think of it as the `toString()` method.)
+
+To clarify, the *magic method* `__str__()` will alter `print(zel)`, but it will not affect the output when typing `zel` into the CLI. The memory address will appear, unless `print()` is used.
+
+You'll also hear them called *dunder methods*, for *double-underscore*.
+
+##### another magic method: `__add__()`
+
+Just as Python knows to call `__str__()` when a `print()` command is called, it knows to call `__add__()` when the plus sign (+) is used. So 2 + 3 = 5. What is Zelda + Leeloo? It's an odd question, but let's define it by combining names and age into one string returned.
+
+It's a binary operator. This means that `2 + 3` exists, but `2 + ` is incomplete, leaving you dangling just like the phrase *"Jack in the"* would also do.

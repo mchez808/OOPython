@@ -13,6 +13,10 @@ class Dog(object):
     def __str__(self):
         return f"{self.name} is {self.age} years old."
 
+    def __add__(self, other):
+        return f"{self.name} and {other.name} have a combined age of " \
+        f"{self.age + other.age} years."
+
     def speak(self, sound):
         return f"{self.name} says {sound}"
 
@@ -25,3 +29,5 @@ if __name__ == '__main__':
     # note: this would only display if typed directly into the CLI.
 
     print(zel, lee)
+
+    print(zel + lee)
