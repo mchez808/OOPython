@@ -6,7 +6,7 @@ Let's begin by creating a basic class. A class about dogs.
 
 <!-- insert pic here -->
 <!-- ![dogs](./img/dags_pancake.jpg "Zelda and Leeloo like pancakes!") -->
-<img src="./img/dags_pancake.jpg" alt="dogs" width="200"/>
+<img src="./img/dags_pancake.jpg" alt="dogs" width="400"/>
 
 ##### Naming conventions
 
