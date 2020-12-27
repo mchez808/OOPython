@@ -32,3 +32,7 @@ It's helpful for me to [run Python interactively](https://github.com/mchez808/OO
 #### Instance Methods
 
 **Instance methods** can only be called from a class object. Just like `.__init__()`, the first parameter of an instance method should always be `self`. This is not a reserved keyword, but rather a Python convention that will improve readability.
+
+It is okay to have an instance method `describe()`; it is far better to write the special instance method `__str__()`. Here's why: if I type `print(zel)`, I'll display the memory address, like `<__main__.Dog object at 0x0000024A21FA42B0>`. By using the **dunder method** `__str__()`, Python will know that by typing `print(zel)`, I really want to view a string representation of the object. (Java developers, think of it as the `toString()` method.)
+
+To clarify, the *dunder method* `__str__()` will alter `print(zel)`, but it will not affect the output when typing `zel` into the CLI. The memory address will appear, unless `print()` is used.
