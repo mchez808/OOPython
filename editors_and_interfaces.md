@@ -2,7 +2,7 @@
 
 Autocomplete in Atom is excellent. Just type `class` (or really just `c`) and the `New class` option appears.
 
-Another helpful one is `ifmain` because, honestly, `if __name__ == '__main__':` can be a mouthful to memorize :) What does `__main__` do? In this case, it sits in a Python class module (a file). Thus it executes when the module is run directly. However, if I import the module (`from dogs import Dog`), then the `__main__` function does not execute.
+Another helpful one is `ifmain` because, honestly, `if __name__ == '__main__':` can be a mouthful to memorize :) What does `__main__` do? In this case, it sits in a Python class module (a file). Thus it executes when the module is run directly. However, if I import the module (`from dog import Dog`), then the `__main__` function does not execute.
 
 # Python in the Command Line Interface
 
@@ -10,7 +10,7 @@ Let's run Python interactively in the *Bash* command line, using the `-i` option
 
 ```
 cd animals
-python -i dogs.py
+python -i dog.py
 ```
 
 ```Py
