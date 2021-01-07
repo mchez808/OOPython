@@ -12,6 +12,13 @@ class Book(object):
     def get_price(self):
         """return price of book. instance method (not class method)"""
         return self.price
+    
+    def set_discount(self, amount):
+        """modifies discount on book object. (A mutator)"""
+        self._discount = amount
+        # note: _discount underscore serves as hint to devs that this attribute is internal to the class
+        # and should not be accessed from outside the class's logic
+        # note: Python doesn't formally enforce this encapsulation.
 
     
 if __name__ == "__main__":
