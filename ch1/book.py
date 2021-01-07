@@ -9,7 +9,12 @@ class Book(object):
         self.pages = pages
         self.price = price
     
+    def get_price(self):
+        """return price of book. instance method (not class method)"""
+        return self.price
+
     
 if __name__ == "__main__":
-    bk1 = Book("War and Peace", "Leo Tolstoy", 1225, 39.95)
-    bk2 = Book("The Catcher in the Rye", "JD Salinger", 234, 29.95)
+    b1 = Book("War and Peace", "Leo Tolstoy", 1225, 39.95)
+    b2 = Book("The Catcher in the Rye", "JD Salinger", 234, 29.95)
+    print(b1.get_price())
