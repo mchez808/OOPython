@@ -38,3 +38,13 @@ if __name__ == "__main__":
         print(b1.__secret)
     except AttributeError as e:
         print("note: successful demonstration of dunder attribute.")
+    # The error is because that property can't be seen outside the class. 
+
+    
+    # However, this is not a perfect mechanism. So the way that Python does this is by prefixing the name of the attribute with the class name. This is called name mangling. 
+    # The reason for this feature is to prevent sub classes, which we'll learn about later, from inadvertently overriding the attribute, 
+    # but other classes can subvert this simply by using the class name. So if I go back to the code and just simply put _book in front of this... 
+    print(b1._Book__secret)
+    # It says now this is a secret attribute. You can see now that I can access the property. So it's not a perfect solution.
+    # Nevertheless, you can use this approach to make sure that subclasses don't use the same name for an attribute that you've already used. Now in some cases that's exactly what you want. You do want subclasses to overwrite things sometimes. But if you need to make sure that they don't, then the double underscore can prevent that.
+    
