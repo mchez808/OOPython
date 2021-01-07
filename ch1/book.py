@@ -8,6 +8,7 @@ class Book(object):
         self.author = author
         self.pages = pages
         self.price = price
+        self.__secret = "SECRET ATTRIBUTE"
     
     def get_price(self):
         """return price of book. instance method (not class method)"""
@@ -32,3 +33,8 @@ if __name__ == "__main__":
     b2.set_discount(0.10)
     print(b2.get_price())
 
+    # note: dunder properties are hidden by the interpreter
+    try:
+        print(b1.__secret)
+    except AttributeError as e:
+        print("note: successful demonstration of dunder attribute.")
