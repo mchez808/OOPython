@@ -6,6 +6,12 @@ class Book:
     # TODO: dunder properties are hidden from other classes
 
     # TODO: create a class method
+    @classmethod
+    def get_book_types(cls):
+        """Returns the BOOK_TYPES constant.
+        operates on a class instance, not an object instance.
+        """
+        return cls.BOOK_TYPES
 
     # TODO: create a static method
 
@@ -28,3 +34,6 @@ if __name__ == "__main__":
         b2 = Book("The Alchemist", "Post-it notes")
     except ValueError as e:
         print("Expected fail case: success")
+
+    # access the class attribute through class method
+    print("Book types:", Book.get_book_types())
