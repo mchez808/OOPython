@@ -17,10 +17,14 @@ class Book:
     def __init__(self, title, booktype):
         self.title = title
         if booktype.upper() not in Book.BOOK_TYPES:
-            raise TypeError
-        self.booktype = booktype
+            raise ValueError(f"{booktype} is not a valid book type")
+        else:
+            self.booktype = booktype
 
 
 if __name__ == "__main__":
     b1 = Book("The Giver", "eBook")
-    b2 = Book("The Alchemist", "Post-it notes")
+    try:
+        b2 = Book("The Alchemist", "Post-it notes")
+    except ValueError as e:
+        print("Expected fail case: success")
