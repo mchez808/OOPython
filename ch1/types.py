@@ -2,11 +2,17 @@ class Book(object):
     def __init__(self, title):
         self.title = title
 
+    def __eq__(self, other):
+        return self.title == other.title
+
 
 class Film(object):
     def __init__(self, title):
         self.title = title
 
+    def __eq__(self, other):
+        return self.title == other.title
+        
 
 if __name__ == "__main__":
     b1 = Book("Life of Pi")
@@ -21,4 +27,4 @@ if __name__ == "__main__":
     b2 = Book("Life of Pi")
     print("types equal?", type(b1) == type(b2))
     print("is equal?", b1 is b2)
-    # print("values equal?", b1 == b2)  # not correctly implemented yet
+    print("are values equal?", b1 == b2)
