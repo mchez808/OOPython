@@ -14,6 +14,8 @@
 # We want to enforce that every shape implements the calcArea function, 
 # and we want to prevent the graphic shape class itself from being instantiated on its own
 
+from math import pi
+
 class GraphicShape:
     def __init__(self):
         super().__init__()
@@ -25,6 +27,9 @@ class GraphicShape:
 class Circle(GraphicShape):
     def __init__(self, radius):
         self.radius = radius
+
+    def calcArea(self):
+        return pi * self.radius ** 2
 
 
 class Square(GraphicShape):

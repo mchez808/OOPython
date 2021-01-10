@@ -7,6 +7,12 @@
 #       It's merely intended to be a blueprint, just an idea. You want only subclasses to provide concrete implementations of that idea.
 #   2) You want to enforce the constraint that there are certain methods in the base class that subclasses must implement.
 
+# example here: program is flexible, so that new 2D shape classes can be added.
+
+# TODO:
+# the scenario here is that we want each shape to inherit from graphic shape. 
+# We want to enforce that every shape implements the calcArea function, 
+# and we want to prevent the graphic shape class itself from being instantiated on its own
 
 class GraphicShape:
     def __init__(self):
