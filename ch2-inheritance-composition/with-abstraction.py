@@ -36,6 +36,10 @@ class Square(GraphicShape):
     def __init__(self, side):
         self.side = side
 
+    def calcArea(self):
+        return self.side ** 2
+
+
 if __name__ == "__main__":
     g = GraphicShape()
 
