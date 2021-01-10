@@ -12,11 +12,16 @@ class Book(Publication):
         self.pages = pages
 
 
-class Magazine(Publication):
+class Periodical(Publication):
     def __init__(self, title, price, period, publisher):
         super().__init__(title, price)
         self.period = period
         self.publisher = publisher
+
+
+class Magazine(Periodical):
+    def __init__(self, title, price, period, publisher):
+        super().__init__(title, price, period, publisher)
 
 
 if __name__ == "__main__":
