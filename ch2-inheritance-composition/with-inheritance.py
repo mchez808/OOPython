@@ -5,18 +5,18 @@ class Publication:
         self.price = price
 
 
-class Book(Publication):
-    def __init__(self, title, price, author, pages):
-        super(Book, self).__init__(title, price)
-        self.author = author
-        self.pages = pages
-
-
 class Periodical(Publication):
     def __init__(self, title, price, period, publisher):
         super().__init__(title, price)
         self.period = period
         self.publisher = publisher
+
+
+class Book(Publication):
+    def __init__(self, title, price, author, pages):
+        super(Book, self).__init__(title, price)
+        self.author = author
+        self.pages = pages
 
 
 class Magazine(Periodical):
