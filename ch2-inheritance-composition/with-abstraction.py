@@ -15,11 +15,14 @@
 # and we want to prevent the graphic shape class itself from being instantiated on its own
 
 from math import pi
+from abc import ABC, abstractmethod  # from standard library
 
-class GraphicShape:
+
+class GraphicShape(ABC):  # Abstract Base Class
     def __init__(self):
         super().__init__()
 
+    @abstractmethod
     def calcArea(self):
         pass
 
@@ -41,7 +44,8 @@ class Square(GraphicShape):
 
 
 if __name__ == "__main__":
-    g = GraphicShape()
+    # g = GraphicShape()
+    # TypeError: Can't instantiate abstract class GraphicShape with abstract methods calcArea
 
     c = Circle(10)
     print(c.calcArea())
