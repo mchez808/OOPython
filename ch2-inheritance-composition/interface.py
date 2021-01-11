@@ -30,3 +30,9 @@ class Circle(GraphicShape):
 if __name__ == "__main__":
     c = Circle(10)
     print(c.calcArea())
+
+    # TODO: add behavior for JSON-representation of concrete class
+    # Why not add it to the GraphicShape ABC (abstract base class)?
+    # Because, if we had other concrete child classes and we wanted them all to have the same behavior,
+    # we wouldn't want to necessitate the implementation of it in every subclass. (DRY: Don't Repeat Yourself)
+    
