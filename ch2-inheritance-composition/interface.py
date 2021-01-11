@@ -25,3 +25,8 @@ class Circle(GraphicShape):
 
     def calcArea(self):
         return pi * self.radius ** 2
+
+
+if __name__ == "__main__":
+    c = Circle(10)
+    print(c.calcArea())
