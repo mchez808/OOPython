@@ -3,3 +3,9 @@
 # An interface is a contract a particular class is making to provide certain behavior.
 from abc import ABC, abstractmethod
 
+
+class GraphicShape(ABC):
+    def __init__(self):
+        super().__init__()
+
+    
