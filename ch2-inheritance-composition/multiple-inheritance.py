@@ -18,6 +18,10 @@ class C(A, B):  # both A and B defined as base classes
     def __init__(self):
         super().__init__()
 
+    def show_attr(self):
+        print(self.abc, self.xyz)
+
 
 if __name__ == "__main__":
     c = C()
+    c.show_attr()   # non-conflicting attributes print just fine
