@@ -4,6 +4,7 @@
 from abc import ABC, abstractmethod
 from math import pi
 
+
 class GraphicShape(ABC):
     """
     abstract base class, with @abstractmethod
@@ -16,26 +17,30 @@ class GraphicShape(ABC):
         pass
 
 
-# TODO: add another ABC called JSONify
+# Interfaces are really useful for declaring that a class has a capability that it knows how to provide. 
+# interface class
 class JSONify(ABC):
     """
-    abstract base class, with 1 single @abstractmethod to_json
+    abstract base class, serving the function of an interface
     """
     @abstractmethod
     def to_json(self):
         pass
-    
 
 
-class Circle(GraphicShape):
+# Python is flexible enough to be able to implement an interface with abstract base classes and multiple inheritance.
+class Circle(GraphicShape, JSONify):
     """
-    Circle class, inheriting from abstract base class
+    Circle class, performing multiple inheritance from abstract base classes
     """
     def __init__(self, radius):
         self.radius = radius
 
     def calcArea(self):
         return pi * self.radius ** 2
+
+    def to_json(self):
+        return f"{{\"circle\" : {str(self.calcArea())} }}"
 
 
 if __name__ == "__main__":
@@ -46,3 +51,4 @@ if __name__ == "__main__":
     # Why not add it to the GraphicShape ABC (abstract base class)?
     # Because, if we had other concrete child classes and we wanted them all to have the same behavior,
     # we wouldn't want to necessitate the implementation of it in every subclass. (DRY: Don't Repeat Yourself)
+    print(c.to_json())
