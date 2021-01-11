@@ -16,6 +16,17 @@ class GraphicShape(ABC):
         pass
 
 
+# TODO: add another ABC called JSONify
+class JSONify(ABC):
+    """
+    abstract base class, with 1 single @abstractmethod to_json
+    """
+    @abstractmethod
+    def to_json(self):
+        pass
+    
+
+
 class Circle(GraphicShape):
     """
     Circle class, inheriting from abstract base class
@@ -35,4 +46,3 @@ if __name__ == "__main__":
     # Why not add it to the GraphicShape ABC (abstract base class)?
     # Because, if we had other concrete child classes and we wanted them all to have the same behavior,
     # we wouldn't want to necessitate the implementation of it in every subclass. (DRY: Don't Repeat Yourself)
-    
