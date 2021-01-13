@@ -12,16 +12,21 @@ class Author:
         return f"{self.first} {self.last}"
 
 
+class Chapter:
+    def __init__(self, name, page_ct):
+        self.name = name
+        self.page_ct = page_ct
+
+
 class Book:
-    # modify this to take in an Author class argument
     def __init__(self, title, price, author=None):
         self.title = title
         self.price = price
         self.author = author
-        self.chapters = []
+        self.chapter_list = []
 
-    def addchapter(self, name, pages):
-        self.chapters.append((name, pages))
+    def addchapter(self, chapter=None):
+        self.chapter_list.append(chapter)
 
     def __str__(self):
         return f"\"{self.title}\" by {self.author} at ${self.price}"
