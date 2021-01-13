@@ -25,7 +25,7 @@ class Book:
         self.author = author
         self.chapter_list = []
 
-    def addchapter(self, chapter=None):
+    def add_chapter(self, chapter=None):
         self.chapter_list.append(chapter)
 
     def get_page_ct(self):
@@ -45,9 +45,9 @@ class Book:
 
 b1 = Book("War and Peace", 39.0, Author("Leo", "Tolstoy"))
 
-b1.addchapter(Chapter("Chapter 1", 125))
-b1.addchapter(Chapter("Chapter 2", 97))
-b1.addchapter(Chapter("Chapter 3", 143))
+b1.add_chapter(Chapter("Chapter 1", 125))
+b1.add_chapter(Chapter("Chapter 2", 97))
+b1.add_chapter(Chapter("Chapter 3", 143))
 
 print(b1)
 print(b1.get_page_ct(), "pages")
