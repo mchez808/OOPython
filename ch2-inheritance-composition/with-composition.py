@@ -14,7 +14,7 @@ class Author:
 
 class Book:
     # modify this to take in an Author class argument
-    def __init__(self, title, price, author : Author):
+    def __init__(self, title, price, author=None):
         self.title = title
         self.price = price
         self.author = author
@@ -22,6 +22,9 @@ class Book:
 
     def addchapter(self, name, pages):
         self.chapters.append((name, pages))
+
+    def __str__(self):
+        return f"\"{self.title}\" by {self.author} at ${self.price}"
 
 
 
@@ -31,4 +34,4 @@ b1.addchapter("Chapter 1", 125)
 b1.addchapter("Chapter 2", 97)
 b1.addchapter("Chapter 3", 143)
 
-print(b1.title)
+print(b1)
