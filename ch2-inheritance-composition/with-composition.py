@@ -29,10 +29,7 @@ class Book:
         self.chapter_list.append(chapter)
 
     def get_page_ct(self):
-        # get sum of chapters: 
-            # Chapter : Book.chapter_list
-            # Chapter.page_ct
-            # Book.chapter_list.page_ct
+        # get sum of chapters
         summ = 0
         for chap in self.chapter_list:
             summ += chap.page_ct
@@ -42,12 +39,12 @@ class Book:
         return f"\"{self.title}\" by {self.author} at ${self.price}"
 
 
+if __name__ == "__main__":
+    b1 = Book("War and Peace", 39.0, Author("Leo", "Tolstoy"))
 
-b1 = Book("War and Peace", 39.0, Author("Leo", "Tolstoy"))
+    b1.add_chapter(Chapter("Chapter 1", 125))
+    b1.add_chapter(Chapter("Chapter 2", 97))
+    b1.add_chapter(Chapter("Chapter 3", 143))
 
-b1.add_chapter(Chapter("Chapter 1", 125))
-b1.add_chapter(Chapter("Chapter 2", 97))
-b1.add_chapter(Chapter("Chapter 3", 143))
-
-print(b1)
-print(b1.get_page_ct(), "pages")
+    print(b1)
+    print(b1.get_page_ct(), "pages")
