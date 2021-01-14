@@ -2,6 +2,13 @@ class XYZ:
     def __init__(self):
         self.xyz = 'XYZ'
 
+    def __eq__(self, other):
+        # must be of same class
+        if not isinstance(other, type(self)):
+            raise ValueError("Can't compare Node to non-Node type")
+        return self.xyz == other.xyz
+
+
 class Node:
     def __init__(self, data, next=None):
         self.data = data
@@ -14,7 +21,8 @@ class Node:
         # must be of same class
         if not isinstance(other, type(self)):
             raise ValueError("Can't compare Node to non-Node type")
-        return self.data == other.data
+        return (self.data == other.data) # TODO: & (self.next == other.next)
+
 
 # TODO
 # class LinkedList:
@@ -35,5 +43,13 @@ if __name__ == "__main__":
     print(a, end=' '); print(b, end=' '); print(c)
 
     xyz = XYZ()
-    # print(xyz == a)
-    print(a == xyz)
+    xyz2 = XYZ()
+    print(xyz == xyz2)
+    try:
+        print(a == xyz)  # same as: >>> print(xyz == a)
+    except ValueError as e:
+        print("error expected, error occurred")
+    
+    print("node equality:")
+    a2 = Node('a', b)
+    print(a == a2)
