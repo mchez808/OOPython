@@ -12,14 +12,14 @@ class Book:
         return f"{self.title} by {self.author}, costs {self.price}"
 
     # TODO: __getattribute__ called when an attr is retrieved. 
-    def __getattribute__(self, name):
-        if name == "price":
-            p = super().__getattribute__("price")
-            # Q: Why call super class?
-            # A: Don't directly access the attr name otherwise a recursive loop is created
-            d = super().__getattribute__("_discount")
-            return p - (p * d)
-        return super().__getattribute__(name)
+    # def __getattribute__(self, name):
+    #     if name == "price":
+    #         p = super().__getattribute__("price")
+    #         # Q: Why call super class?
+    #         # A: Don't directly access the attr name otherwise a recursive loop is created
+    #         d = super().__getattribute__("_discount")
+    #         return p - (p * d)
+    #     return super().__getattribute__(name)
 
     # TODO: __setattr__ called when an attribute value is set. Don't set the attr
     # directly here otherwise a recursive loop causes a crash
@@ -29,8 +29,10 @@ class Book:
                 raise ValueError("The 'price' attribute must be a float")
         return super().__setattr__(name, value)
 
-    # TODO: __getattr__ called when __getattribute__ lookup fails - you can
-    # pretty much generate attributes on the fly with this method
+    # TODO: __getattr__ called when __getattribute__ lookup fails
+    # you can pretty much generate attributes on the fly with this method
+    def __getattr__(self, name):
+        return name + " is not here!"
 
 
 if __name__ == "__main__":
@@ -42,3 +44,6 @@ if __name__ == "__main__":
 
     b2.price = float(40)  # using an int will raise an exception
     print(b2)
+
+    # If an attribute doesn't exist, __getattr__ will be called
+    print(b1.randomprop)
