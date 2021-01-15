@@ -19,9 +19,10 @@ class Node:
 
     def __eq__(self, other):
         # must be of same class
-        if not isinstance(other, type(self)):
+        if not isinstance(other, Node):
             raise ValueError("Can't compare Node to non-Node type")
-        return (self.data == other.data) # TODO: & (self.next == other.next)
+
+        return (self.data == other.data) and (self.next == other.next)
 
 
 # TODO
@@ -48,7 +49,7 @@ if __name__ == "__main__":
     try:
         print(a == xyz)  # same as: >>> print(xyz == a)
     except ValueError as e:
-        print("error expected, error occurred")
+        print("An error was expected; an error has occurred.")
     
     print("node equality:")
     a2 = Node('a', b)
