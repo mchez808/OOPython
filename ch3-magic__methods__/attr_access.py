@@ -21,9 +21,13 @@ class Book:
             return p - (p * d)
         return super().__getattribute__(name)
 
-
     # TODO: __setattr__ called when an attribute value is set. Don't set the attr
     # directly here otherwise a recursive loop causes a crash
+    def __setattr__(self, name, value):
+        if (name == "price"):
+            if type(value) is not float:
+                raise ValueError("The 'price' attribute must be a float")
+        return super().__setattr__(name, value)
 
     # TODO: __getattr__ called when __getattribute__ lookup fails - you can
     # pretty much generate attributes on the fly with this method
@@ -35,3 +39,6 @@ if __name__ == "__main__":
 
     b1.price = 38.95
     print(b1)
+
+    b2.price = float(40)  # using an int will raise an exception
+    print(b2)
