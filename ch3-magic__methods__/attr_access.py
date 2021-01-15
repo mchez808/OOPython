@@ -11,8 +11,16 @@ class Book:
     def __str__(self):
         return f"{self.title} by {self.author}, costs {self.price}"
 
-    # TODO: __getattribute__ called when an attr is retrieved. Don't
-    # directly access the attr name otherwise a recursive loop is created
+    # TODO: __getattribute__ called when an attr is retrieved. 
+    def __getattribute__(self, name):
+        if name == "price":
+            p = super().__getattribute__("price")
+            # Q: Why call super class?
+            # A: Don't directly access the attr name otherwise a recursive loop is created
+            d = super().__getattribute__("_discount")
+            return p - (p * d)
+        return super().__getattribute__(name)
+
 
     # TODO: __setattr__ called when an attribute value is set. Don't set the attr
     # directly here otherwise a recursive loop causes a crash
@@ -21,5 +29,9 @@ class Book:
     # pretty much generate attributes on the fly with this method
 
 
-b1 = Book("War and Peace", "Leo Tolstoy", 39.95)
-b2 = Book("The Catcher in the Rye", "JD Salinger", 29.95)
+if __name__ == "__main__":
+    b1 = Book("War and Peace", "Leo Tolstoy", 39.95)
+    b2 = Book("The Catcher in the Rye", "JD Salinger", 29.95)
+
+    b1.price = 38.95
+    print(b1)
