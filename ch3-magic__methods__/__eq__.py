@@ -86,3 +86,11 @@ if __name__ == "__main__":
     print(a >= b, end=', '); print(b >= a)
     print(a < b, end=', '); print(b < a)
     print(a <= b, end=', '); print(b <= a)
+
+    # not equal to
+    print(a2 != a)
+
+    nodes = [c, a2, b, c2, a]
+    nodes.sort()
+    print([node.data for node in nodes])  # equivalency
+    print([str(node) for node in nodes])  # equivalency
