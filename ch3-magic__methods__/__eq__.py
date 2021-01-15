@@ -9,6 +9,8 @@ class XYZ:
         return self.xyz == other.xyz
 
 
+err = "Can't compare Node to non-Node type"
+
 class Node:
     def __init__(self, data, next=None):
         self.data = data
@@ -20,9 +22,33 @@ class Node:
     def __eq__(self, other):
         # must be of same class
         if not isinstance(other, Node):
-            raise ValueError("Can't compare Node to non-Node type")
+            raise ValueError(err)
 
         return (self.data == other.data) and (self.next == other.next)
+
+    # greater than
+    def __gt__(self, other):
+        if not isinstance(other, Node):
+            raise ValueError(err)
+        return self.data > other.data
+
+    # greater than or equal to
+    def __ge__(self, other):
+        if not isinstance(other, Node):
+            raise ValueError(err)
+        return self.data >= other.data
+
+    # less than
+    def __lt__(self, other):
+        if not isinstance(other, Node):
+            raise ValueError(err)
+        return self.data < other.data
+
+    # less than or equal to
+    def __le__(self, other):
+        if not isinstance(other, Node):
+            raise ValueError(err)
+        return self.data <= other.data
 
 
 # TODO
@@ -54,3 +80,9 @@ if __name__ == "__main__":
     print("node equality:")
     a2 = Node('a', b)
     print(a == a2)
+
+    print("comparisons")
+    print(a > b, end=', '); print(b > a)
+    print(a >= b, end=', '); print(b >= a)
+    print(a < b, end=', '); print(b < a)
+    print(a <= b, end=', '); print(b <= a)
