@@ -26,25 +26,27 @@ class Book:
 # What else Data Classes do:
 #   - __eq__ and __repr__ are automatically implemented
 
-# create some instances
-b1 = Book("War and Peace", "Leo Tolstoy", 1225, 39.95)
-b2 = Book("The Catcher in the Rye", "JD Salinger", 234, 29.95)
-b3 = Book("The Catcher in the Rye", "JD Salinger", 234, 29.95)
 
-# access fields
-print(b1.title)
-print(b2.author)
+if __name__ == "__main__":
+    # create some instances
+    b1 = Book("War and Peace", "Leo Tolstoy", 1225, 39.95)
+    b2 = Book("The Catcher in the Rye", "JD Salinger", 234, 29.95)
+    b3 = Book("The Catcher in the Rye", "JD Salinger", 234, 29.95)
 
-# print the book itself - dataclasses implement __repr__
-# implementation of the __repr__ function
-print(b1)
-repr(b1)
+    # access fields
+    print(b1.title)
+    print(b2.author)
 
-# comparing two dataclasses - they implement __eq__
-print(b1 == b2)
-print(b2 == b3)
+    # print the book itself - dataclasses implement __repr__
+    # implementation of the __repr__ function
+    print(b1)
+    repr(b1)
 
-# change some fields, call a regular class method
-b1.title = "Anna Karenina"
-b1.pages = 864
-print(b1.bookinfo())
+    # comparing two dataclasses - they implement __eq__
+    print(b1 == b2)
+    print(b2 == b3)
+
+    # change some fields, call a regular class method
+    b1.title = "Anna Karenina"
+    b1.pages = 864
+    print(b1.bookinfo())
