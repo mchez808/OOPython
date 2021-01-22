@@ -26,5 +26,5 @@ if __name__ == "__main__":
     # call the object as if it were a function
     # to change the values of the object's attributes
     print(b1)
-    b1("Anna Karenina", "Leo Tolstoy", 49.95)
+    b1("Anna Karenina", "Leo Tolstoy", 49.95)       # <------- CALLABLE OBJECT example
     print(b1)
